@@ -1,4 +1,5 @@
 # Gazebo ROS Model Color
+[![Build Status](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/bt345.svg)](https://www.verlab.dcc.ufmg.br/gazebo_ros_model_color)
 [![Version](https://img.shields.io/badge/version-1.0-brightgreen.svg)](https://www.verlab.dcc.ufmg.br/gazebo_ros_model_color)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](LICENSE)
 
