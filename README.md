@@ -14,12 +14,39 @@ This package contains a gazebo ros plugin which allows the user to modified dyna
 - http://answers.gazebosim.org/question/1377/visuals-material-update-from-modelplugin-in-ros-gazebo/
 - How to create a gazebo ros plugin: http://gazebosim.org/tutorials?tut=ros_plugins
 
-### Institution ###
+## Usage ##
+This is an example how to use this plugin. Once imported it into a object, ROS should be able to provide a service to change the object color.
+
+```xml
+    <model name="box_wall">
+      <pose>2 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <plugin name="gazebo_ros_model_color" filename="libgazebo_ros_model_color.so">
+          </plugin>
+        </visual>
+      </link>
+    </model>
+```
+
+## Institution ##
 
 Federal University of Minas Gerais (UFMG)  
 Computer Science Department  
 Belo Horizonte - Minas Gerais -Brazil 
 
-### Laboratory ###
+## Laboratory ##
 
 ![VeRLab](https://www.dcc.ufmg.br/dcc/sites/default/files/public/verlab-logo.png)
