@@ -6,7 +6,7 @@ This package contains a gazebo ros plugin which allows the user to modified dyna
 
 ## Status 
 - [x] Compilation
-- [] Fix some problem with gazebo_ros_api. This occurs due I change from model to visual class.
+- [ ] Fix some problem with gazebo_ros_api. This occurs due I change from model to visual class.
 
 
 ## References
