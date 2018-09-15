@@ -5,6 +5,21 @@
 
 This package contains a gazebo ros plugin which allows the user to modified dynamicly the color of the objects.
 
+## Installation ##
+This setup was tested in ROS Kinetic, running on Ubuntu 16.04 LTS.
+
+Download from github and install the dependencies:
+
+```sh
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/verlab/gazebo_ros_model_color.git
+$ cd ~/catkin_ws/
+$ rosdep install --from-paths src/gazebo_ros_model_color --ignore-src -r -y
+$ catkin_make
+$ source devel/setup.bash
+```
+
+
 ## Usage ##
 This is an example how to use this plugin. Once imported it into a object, ROS should be able to provide a service to change the object color.
 
@@ -49,6 +64,22 @@ This is an example how to use this plugin. Once imported it into a object, ROS s
 
 </robot>
 ```
+To execute the example, type:
+```sh
+$ roslaunch gazebo_ros_model_color test.launch # this launch the gazebo world
+$ roscd gazebo_ros_model_color/urdf/
+$ rosrun gazebo_ros spawn_model -file box.gazebo.urdf -urdf -z 0.01 -model my_box
+```
+
+Test:
+```sh
+$ rosservice call /gz_client/model_color "light_name: ''
+diffuse: {r: 0.5, g: 0.5, b: 0.0, a: 1.0}
+attenuation_constant: 0.0
+attenuation_linear: 0.0
+attenuation_quadratic: 0.0"
+```
+
 
 ## References
 - https://bitbucket.org/osrf/gazebo/src/aab36be8994a/plugins/?at=default
