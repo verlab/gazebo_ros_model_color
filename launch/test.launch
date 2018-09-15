@@ -3,5 +3,8 @@
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find gazebo_ros_model_color)/worlds/hello.world"/>
     <!-- more default parameters can be changed here -->
+    <!--arg name="verbose" value="true"/-->
+    <!--arg name="debug" value="true"/-->
+
   </include>
 </launch>

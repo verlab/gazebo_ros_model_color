@@ -9,29 +9,5 @@
       <uri>model://sun</uri>
     </include>
 
-    <model name="box_wall">
-      <pose>2 0 0.5 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-          <plugin name="gazebo_ros_model_color" filename="libgazebo_ros_model_color.so">
-          </plugin>
-        </visual>
-      </link>
-    </model>
-
-    <!-- reference to your plugin -->
-    <!--plugin name="gazebo_ros_model_color" filename="libgazebo_ros_model_color.so"/-->
   </world>
 </sdf>

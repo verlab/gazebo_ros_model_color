@@ -15,17 +15,23 @@ find_package(catkin REQUIRED COMPONENTS
 # Depend on system install of Gazebo
 find_package(gazebo REQUIRED)
 
-link_directories(${GAZEBO_LIBRARY_DIRS})
-include_directories(${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
+find_package(Boost REQUIRED COMPONENTS thread)
 
-add_library(${PROJECT_NAME} src/simple_world_plugin.cpp)
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+link_directories(${Boost_LIBRARY_DIRS} ${GAZEBO_LIBRARY_DIRS})
+include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
 
 catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES gazebo_ros_model_color
   DEPENDS 
     roscpp 
     gazebo_ros 
 )
+
+add_library(${PROJECT_NAME} src/gazebo_ros_model_color.cpp)
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES}  ${Boost_LIBRARIES})
+
+
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -112,12 +118,12 @@ catkin_package(
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
+#catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES gazebo_ros_model_color
 #  CATKIN_DEPENDS roscpp
 #  DEPENDS system_lib
-)
+#)
 
 ###########
 ## Build ##
@@ -125,10 +131,10 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
+#include_directories(
 # include
-  ${catkin_INCLUDE_DIRS}
-)
+#  ${catkin_INCLUDE_DIRS}
+#)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
