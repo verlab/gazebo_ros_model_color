@@ -6,9 +6,10 @@
 This package contains a gazebo ros plugin which allows the user to modified dynamicly the color of the objects.
 
 ## Installation ##
-This setup was tested in ROS Kinetic, running on Ubuntu 16.04 LTS.
+> This setup was tested in ROS Kinetic, running on Ubuntu 16.04 LTS.
 
-Download from github and install the dependencies:
+* [Install Gazebo](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
+* Download from github and install the dependencies:
 
 ```sh
 $ cd ~/catkin_ws/src/
