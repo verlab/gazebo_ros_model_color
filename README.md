@@ -68,8 +68,6 @@ This is an example how to use this plugin. Once imported it into a object, ROS s
 To execute the example, type:
 ```sh
 $ roslaunch gazebo_ros_model_color test.launch # this launch the gazebo world
-$ roscd gazebo_ros_model_color/urdf/
-$ rosrun gazebo_ros spawn_model -file box.gazebo.urdf -urdf -z 0.01 -model my_box
 ```
 
 Test:
