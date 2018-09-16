@@ -1,4 +1,12 @@
+<?xml version="1.0"?>
 <robot name="color_box">
+  <link name="world"/>
+
+  <joint name="world_box_joint" type="fixed">
+    <parent link="world"/>
+    <child link="my_color_box"/>
+  </joint>
+
 
   <link name="my_color_box">
     <inertial>
